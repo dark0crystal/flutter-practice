@@ -24,7 +24,18 @@ class _MyHomePageState extends State<MyHomePage> {
        
         title: Text(widget.title),
       ),
-      body: Container()
+      body: SafeArea(
+        child:SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+             child: Column(
+            children: <Widget>[
+
+            ],
+          ),),
+         
+        )
+      )
     );
   }
 }
