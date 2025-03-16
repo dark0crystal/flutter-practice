@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Padding(
             padding: EdgeInsets.all(16.0),
              child: Column(
-            children: <Widget>[
+            children: [
               Row(children: <Widget>[
                  buildCont(Colors.amber, 60.0),
                 padding16,
@@ -41,7 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
                  buildCont(Colors.brown, 60.0),
               ]
                 
-              )
+              ),
+              _BuildRowAndStack(),
+      
             ],
           ),),
          
@@ -56,5 +58,45 @@ Container buildCont(Color c, double size){
         color: c,
         width: size,
         height: size,
+       
       );
 }
+
+
+Row _BuildRowAndStack() {
+  return Row(
+    children: <Widget>[
+      CircleAvatar(
+        backgroundColor: Colors.lightGreen,
+        radius: 120.0,
+        child: Stack(
+          children: <Widget>[
+            containerCW(Colors.yellow,100.0),
+            containerCW(Colors.amber,60.0),
+            containerCW(Colors.brown,40.0),
+            containerCW(Colors.red,20.0)
+          ],
+        ),
+      )
+    ],
+  );
+}
+
+ Container containerCW(Color myColor,double mySize) {
+    return Container(
+              color: myColor,
+              height: mySize,
+              width:mySize,
+    );
+  }
+
+
+// Container smilingFace(){
+//   return Container(
+   
+    
+//     child: Stack(
+
+//     ),
+//   );
+// }
