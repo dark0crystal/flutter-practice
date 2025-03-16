@@ -17,6 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
    
+    var padding16 = Padding(padding: EdgeInsets.all(16.0),);
     return Scaffold(
       appBar: AppBar(
       
@@ -31,24 +32,13 @@ class _MyHomePageState extends State<MyHomePage> {
              child: Column(
             children: <Widget>[
               Row(children: <Widget>[
-                  Container(
-                  color: Colors.amber,
-                  width: 50,
-                  height: 50,
-                ),
-                Padding(padding: EdgeInsets.all(16.0),),
-                  Container(
-                  color: Colors.yellow,
-                  width: 50,
-                  height: 50,
-                ),
-                Padding(padding: EdgeInsets.all(16.0),),
+                 buildCont(Colors.amber, 60.0),
+                padding16,
+                 Expanded(child: 
+                 buildCont(Colors.yellow, 60.0),), 
+                padding16,
 
-                  Container(
-                  color: Colors.brown,
-                  width: 50,
-                  height: 50,
-                ),
+                 buildCont(Colors.brown, 60.0),
               ]
                 
               )
@@ -59,4 +49,12 @@ class _MyHomePageState extends State<MyHomePage> {
       )
     );
   }
+}
+
+Container buildCont(Color c, double size){
+ return Container(
+        color: c,
+        width: size,
+        height: size,
+      );
 }
