@@ -30,7 +30,28 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: EdgeInsets.all(16.0),
              child: Column(
             children: <Widget>[
+              Row(children: <Widget>[
+                  Container(
+                  color: Colors.amber,
+                  width: 50,
+                  height: 50,
+                ),
+                Padding(padding: EdgeInsets.all(16.0),),
+                  Container(
+                  color: Colors.yellow,
+                  width: 50,
+                  height: 50,
+                ),
+                Padding(padding: EdgeInsets.all(16.0),),
 
+                  Container(
+                  color: Colors.brown,
+                  width: 50,
+                  height: 50,
+                ),
+              ]
+                
+              )
             ],
           ),),
          
