@@ -62,6 +62,16 @@ Container buildCont(Color c, double size){
       );
 }
 
+Container buildContCustom(Color c, double width ,double length ){
+ return Container(
+        color: c,
+        width: width,
+        height: length,
+       
+      );
+}
+
+
 
 Row _BuildRowAndStack() {
   return Row(
