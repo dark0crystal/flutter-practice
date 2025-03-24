@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-
-
   final String title;
 
   @override
@@ -12,101 +10,85 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
- 
-
   @override
   Widget build(BuildContext context) {
-   
-    var padding16 = Padding(padding: EdgeInsets.all(16.0),);
     return Scaffold(
       appBar: AppBar(
-      
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-       
-        title: Text(widget.title),
-      ),
-      body: SafeArea(
-        child:SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(16.0),
-             child: Column(
-            children: [
-              Row(children: <Widget>[
-                 buildCont(Colors.amber, 60.0),
-                padding16,
-                 Expanded(child: 
-                 buildCont(Colors.yellow, 60.0),), 
-                padding16,
-
-                 buildCont(Colors.brown, 60.0),
-              ]
-                
-              ),
-              _BuildRowAndStack(),
-      
-            ],
-          ),),
-         
-        )
-      )
-    );
-  }
-}
-
-Container buildCont(Color c, double size){
- return Container(
-        color: c,
-        width: size,
-        height: size,
-       
-      );
-}
-
-Container buildContCustom(Color c, double width ,double length ){
- return Container(
-        color: c,
-        width: width,
-        height: length,
-       
-      );
-}
-
-
-
-Row _BuildRowAndStack() {
-  return Row(
-    children: <Widget>[
-      CircleAvatar(
-        backgroundColor: Colors.lightGreen,
-        radius: 120.0,
-        child: Stack(
-          children: <Widget>[
-            containerCW(Colors.yellow,100.0),
-            containerCW(Colors.amber,60.0),
-            containerCW(Colors.brown,40.0),
-            containerCW(Colors.red,20.0)
-          ],
+        backgroundColor: Colors.deepPurple,
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
         ),
-      )
-    ],
-  );
-}
-
- Container containerCW(Color myColor,double mySize) {
-    return Container(
-              color: myColor,
-              height: mySize,
-              width:mySize,
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  "lib/assets/images/cat.jpeg",
+                  width: double.infinity,
+                  height: 300,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.redAccent,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Column One",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Column Two",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Center(
+                  child: Text(
+                    "Column Three",
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
-
-
-// Container smilingFace(){
-//   return Container(
-   
-    
-//     child: Stack(
-
-//     ),
-//   );
-// }
+}
