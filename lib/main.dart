@@ -1,20 +1,25 @@
+
 import 'package:flutter/material.dart';
 import 'package:project/pages/MyHomePage.dart';
-void main() =>  runApp(const MyApp());
+import 'package:project/pages/SecondPage.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-      ), // MyHomePage
-      home: const MyHomePage(title: 'Hello Again from cursor'),
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => MyHomePage(),  // Home page route
+        '/second': (context) => SecondPage(),  // Second page route
+      },
     );
   }
 }
-
