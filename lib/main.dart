@@ -7,7 +7,7 @@ import 'package:project/pages/SecondPage.dart';
 void main() {
   runApp(MyApp());
 }
-//fixxxx
+//fixxxxxx
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
