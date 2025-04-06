@@ -14,21 +14,22 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate to the second page
-            Navigator.pushNamed(context, '/second');
-          },
-          child: Text('Go to Second Page'),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue, // Set background color (previously 'primary')
-            foregroundColor: Colors.white, // Set text color (previously 'onPrimary')
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-        ),
+        child:Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Form(key: _formKey,
+            child: Column(
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter your Email',
+                  ),
+                )
+              ],
+            ),)
+          ],
+        ) 
       ),
       floatingActionButton: FloatingActionButton(onPressed:(){
         showAlert(context, "Hi There !!");
