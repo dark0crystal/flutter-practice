@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
+
+  final _formKey = GlobalKey<FormState>();
+  String email='';
+  String password='';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +30,30 @@ class MyHomePage extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed:(){
+        showAlert(context, "Hi There !!");
+      },
+      
+      ),
     );
   }
+}
+
+
+void showAlert(BuildContext context,String message) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog( title: Text('Alert'),
+        content: Text(message),
+        actions: [
+          TextButton( onPressed: () {
+              Navigator.of(context).pop(); // Close the dialog
+            },
+            child: Text('OK'),
+          ),
+        ],
+      );
+    },
+  );
 }
