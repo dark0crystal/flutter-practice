@@ -26,6 +26,7 @@ class MyHomePage extends StatelessWidget {
                     labelText: 'Enter your Email',
                   ),
                 ),
+                SizedBox(height: 18,),
                 TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
