@@ -25,6 +25,13 @@ class MyHomePage extends StatelessWidget {
                     border: OutlineInputBorder(),
                     labelText: 'Enter your Email',
                   ),
+                ),
+                TextFormField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter your Password',
+                  ),
                 )
               ],
             ),)
