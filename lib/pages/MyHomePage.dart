@@ -32,7 +32,14 @@ class MyHomePage extends StatelessWidget {
                     border: OutlineInputBorder(),
                     labelText: 'Enter your Password',
                   ),
-                )
+                  validator: (value){
+                    if(value == null || value.isEmpty){
+                      return 'Please Again';
+                    }
+                  },
+                ),
+
+                
               ],
             ),)
           ],
