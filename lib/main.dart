@@ -10,6 +10,14 @@ void main(){
   int age = int.parse(stdin.readLineSync()!); // `!` asserts it’s not null
   print("You are $age years old.");
 
+  print("Enter multiple numbers ");
+  List<String> nums = stdin.readLineSync()!.split(' ');
+  nums.forEach((num){
+    print("the num: $num");
+
+  });
+
+
 }
 
 // import 'package:flutter/material.dart';
