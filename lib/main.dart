@@ -18,6 +18,13 @@ void main(){
   });
 
 
+  print("enter werd");
+  String? word = stdin.readLineSync()! [0];
+  print(word);
+  
+
+
+
 }
 
 // import 'package:flutter/material.dart';
