@@ -6,6 +6,10 @@ void main(){
   String? name =stdin.readLineSync();
   print("your name: $name" );
 
+   print("Enter your age:");
+  int age = int.parse(stdin.readLineSync()!); // `!` asserts it’s not null
+  print("You are $age years old.");
+
 }
 
 // import 'package:flutter/material.dart';
