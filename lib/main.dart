@@ -21,7 +21,9 @@ void main(){
   print("enter werd");
   String? word = stdin.readLineSync()! [0];
   print(word);
-  
+
+  Runes smileFace = Runes('\u{1F600}');
+  print(String.fromCharCodes(smileFace));
 
 
 
