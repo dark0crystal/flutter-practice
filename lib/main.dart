@@ -1,55 +1,25 @@
 import 'dart:io';
+import 'firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+import 'package:flutter/material.dart';
 
 
-void main(){
-  print("Enter your name: ");
-  String? name =stdin.readLineSync();
-  print("your name: $name" );
-
-   print("Enter your age:");
-  int age = int.parse(stdin.readLineSync()!); // `!` asserts it’s not null
-  print("You are $age years old.");
-
-  print("Enter multiple numbers ");
-  List<String> nums = stdin.readLineSync()!.split(' ');
-  nums.forEach((num){
-    print("the num: $num");
-
-  });
-
-
-  print("enter werd");
-  String? word = stdin.readLineSync()! [0];
-  print(word);
-
-  Runes smileFace = Runes('\u{1F600}');
-  print(String.fromCharCodes(smileFace));
-
-
-
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
 
-// import 'package:flutter/material.dart';
-// import 'package:project/pages/MyHomePage.dart';
-// import 'package:project/pages/SecondPage.dart';
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-
-// void main() {
-//   runApp(MyApp());
-// }
-// //fixxx
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       initialRoute: '/',
-//       routes: {
-//         '/': (context) => MyHomePage(),  // Home page route
-//         '/second': (context) => SecondPage(),  // Second page route
-//       },
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      
+    );
+  }
+}
